@@ -54,6 +54,13 @@
 ### Encoding
   Force `UTF-8`.
   
+### Indexing
+String can be indexed:
+```
+"abc"[0] # a
+```
+Currently, the idea is to index the characters.
+  
 ## Number
 
 ### Float
@@ -80,18 +87,79 @@
 - Optional sign can be added (`+, -`)
 - `_` can be used between digits and has no other effects: `1_000_000_000, 1_0000_0000, 1.23_123`
 
- ## Vector
- - Random accessible
- - Not sparse
- 
- ## List
- - Not random accessible
- 
- ## HashMap
- [TODO]
+## Nil
+Singleton, represents empty value.
+
+## IndexedContainer
+- Type:
+  - List
+  - Deque
+  - Vector
+- Same Interface
+- Can be sliced `$a[1,2,5]; $a[1..5]`
+- Usage
+   ```
+   a = new-container type                    # create (type = list/deque/vector, vector on default)
+   push-back         $a    1                 # append
+   pop-back          $a                      # pop back
+   push-front        $a    1                 # push front
+   pop-front         $a                      # pop front
+   insert            <var> <index> <value>   # insert
+   erase             <var> <index>           # erase
+   print $a[0]                               # access
+   $a[0] = 2                                 # update
+   length $a                                 # measure
+   clone  $a type                            # make a new copy, but with type
+   ```
+ ## Map
+- Type:
+  - TreeMap
+  - HashMap
+- Usage:
+  [TODO]
   
- ## Struct
- [TODO]
+   ## Set
+- Type:
+  - TreeSet
+  - HashSet
+- Usage:
+  [TODO]
+  
+ ## Object
+ All Objects burn empty. Object can be assigned with new fields.
+ ```
+ a = new-object     # create object
+ $a.name = "Anqur"  # assign new object
+ $a.age  = 14       # assign new object
+ b = clone $a       # make a copy
+ erase $a.name      # delete a field
+ ```
+ 
+ ## Function
+ Functions can be manipulated as variables.
+ ```
+ fun test() { print "123" }
+ 
+ f = fn (x) { $x + 1 }
+ h = test
+ $f(1)
+ $h()
+ ```
+ 
+ ## Sequence
+ ```
+ seq X Y Z     # current idea is to simulate bash
+ ```
  
  ## Exception
- [TODO]
+Static object with 3 fields
+```
+$e.cause         # any   string
+$e.type          # any   string
+$e.extra         # extra information, of any type
+```
+Stacktrace can be print via
+```
+print-stacktrace $e
+```
+
