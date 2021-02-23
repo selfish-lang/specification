@@ -45,7 +45,7 @@
 - Heredoc
 
   Almost the same as double quoted, but scoped by `"""`; linebreaks are recorded.
-  Notice that all other escaped characters will still take effect, but `"` will be a valid character itself so no escape mode is needed or supported.
+  Notice that all escaped characters will still take effect, but `"` will be a valid character itself.
   ```
   """
   heredoc
