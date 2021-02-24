@@ -112,13 +112,27 @@ A crossline is defined as
 '\' [whitespace] <line switch>
 ```
 
-## Basic Expression
+## Lambda Expression
+
+A lambda expression takes the form:
+
+```
+@(x, y, z) -> { return x + y + z  }
+```
+
+That is
+```
+@(arg list) -> { operations }
+```
+
+## Expression
 
 The expressions in Selfish take the following forms:
 
 - Single Quoted String is an expression
 - Double Quoted String is an expression (including interpolation)
 - Bareword is an expression
+- A lambda expression is an expression
 - Variable is an expression
 - Member Access is an expression
 
@@ -128,6 +142,12 @@ Given `S` is an expression:
 Given `X, Y` are expressions:
 
 - `X <whitespace/crossline>+ Y` is also an expression
+
+Given `X Y` are expressions:
+- `X <whitespace/crossline>+ '<' <whitespace/crossline>+ Y` is also an expression called (left) redirection expression
+
+Given `X Y` are expressions:
+- `X <whitespace/crossline>+ '>' <whitespace/crossline>+ Y` is also an expression called (right) redirection expression
 
 Given `X, Y` are expressions:
 - `X <whitespace/crossline>+ | <whitespace/crossline>+ Y` is also an expression called pipeline
