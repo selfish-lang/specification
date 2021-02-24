@@ -109,7 +109,7 @@ The following and their klein closures are whitespaces:
 
 A crossline is defined as
 ```
-'/' [whitespace] <line switch>
+'\' [whitespace] <line switch>
 ```
 
 ## Expression
