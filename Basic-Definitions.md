@@ -149,6 +149,13 @@ Given `X Y` are expressions:
 Given `X Y` are expressions:
 - `X <whitespace/crossline>+ '>' <whitespace/crossline>+ Y` is also an expression called (right) redirection expression
 
+Given `X Y` are expressions:
+- `X <whitespace/crossline>+ '>>' <whitespace/crossline>+ Y` is also an expression called (append) redirection expression
+
+
+Given `X Y` are expressions:
+- `X <whitespace/crossline>+ '<>' <whitespace/crossline>+ Y` is also an expression called (double) redirection expression
+
 Given `X, Y` are expressions:
 - `X <whitespace/crossline>+ | <whitespace/crossline>+ Y` is also an expression called pipeline
 
