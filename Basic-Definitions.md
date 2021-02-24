@@ -125,6 +125,20 @@ That is
 @(arg list) -> { operations }
 ```
 
+## Redirect Mark
+
+### Redirect Symbol
+- `<` input redirect
+- `>` output redirect
+- `>>` output redirect (appending)
+- `<>` double redirect
+
+### Definition
+
+```
+redirect-mark ::= [ fd ] redirect-symbol 
+```
+
 ## Expression
 
 The expressions in Selfish take the following forms:
@@ -144,17 +158,8 @@ Given `X, Y` are expressions:
 - `X <whitespace/crossline>+ Y` is also an expression
 
 Given `X Y` are expressions:
-- `X <whitespace/crossline>+ '<' <whitespace/crossline>+ Y` is also an expression called (left) redirection expression
-
-Given `X Y` are expressions:
-- `X <whitespace/crossline>+ '>' <whitespace/crossline>+ Y` is also an expression called (right) redirection expression
-
-Given `X Y` are expressions:
-- `X <whitespace/crossline>+ '>>' <whitespace/crossline>+ Y` is also an expression called (append) redirection expression
-
-
-Given `X Y` are expressions:
-- `X <whitespace/crossline>+ '<>' <whitespace/crossline>+ Y` is also an expression called (double) redirection expression
+- `X <whitespace/crossline>+ <redirect-mark> '&' ( '-' | fd )` is also an expression called redirected expression
+- `X <whitespace/crossline>+ <redirect-mark> <whitespace/crossline>+ Y` is also an expression called redirected expression
 
 Given `X, Y` are expressions:
 - `X <whitespace/crossline>+ | <whitespace/crossline>+ Y` is also an expression called pipeline
