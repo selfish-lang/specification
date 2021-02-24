@@ -151,9 +151,9 @@ print (+ 1 2)
    - variable or member access should be determined in parse phase
    - if it is lexically impossible to be a function or variable or member access, the expression must be understand as finding the executable to run
    - otherwise, the real thing to do is determined in runtime by the following order:
-     - if alias exists, execuate alias
-     - if function exists, execuate function
-     - if the execuable can be found, run executable
+     - if alias exists, execute alias
+     - if function exists, execute function
+     - if the executable can be found, run executable
      - throw expression
 
 ## Tilde Expansion Rule
