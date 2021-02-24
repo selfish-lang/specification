@@ -112,7 +112,7 @@ A crossline is defined as
 '\' [whitespace] <line switch>
 ```
 
-## Expression
+## Basic Expression
 
 The expressions in Selfish take the following forms:
 
@@ -129,7 +129,12 @@ Given `X, Y` are expressions:
 
 - `X <whitespace/crossline>+ Y` is also an expression
 
+Given `X, Y` are expressions:
+- `X <whitespace/crossline>+ | <whitespace/crossline>+ Y` is also an expression called pipeline
+
 The above rule terminates until it reaches a line switch.
+
+Pipeline has a lower precedence.
 
 ### Examples
 
@@ -141,6 +146,10 @@ print (+ 1 2)
 (first function-array) 1 2 3
 
 (1)
+
+obj | func | func
+
+(obj | func) xyz
 ```
 
 ### Issues
