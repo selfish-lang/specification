@@ -23,7 +23,7 @@
     ```
   - Support interpolation
     ```
-    "test $VAR $(EXP)"
+    "test $(EXP)"
     ``` 
   
   - Support escaped characters
